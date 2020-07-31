@@ -7,17 +7,17 @@ import SearchInput from '../components/SearchInput';
 import VictimsList from '../components/VictimsList';
 
 const StatePageTemplate = ({ data }) => {
-  const [ search, setSearch ] = useState('');
+  const [ searchFilter, setSearchFilter ] = useState('');
   const onSearch = (term) => {
     if (!term || term.length < 3) {
-      return setSearch('');
+      return setSearchFilter('');
     }
 
-    setSearch(term);
+    setSearchFilter(term);
   };
   const filteredVictims = data.allKillingsJson.edges.filter(
     (edge) => (
-      edge.node.Victim_s_name.toLowerCase().includes(search)
+      edge.node.Victim_s_name.toLowerCase().includes(searchFilter)
     )
   ); 
 
@@ -25,7 +25,10 @@ const StatePageTemplate = ({ data }) => {
     <Layout>
       <Breadcrumbs state={data.allKillingsJson.edges[0].node.State} />
       <SearchInput onSearch={(e) => onSearch(e.target.value.toLowerCase())} />
-      <VictimsList list={filteredVictims} />
+      <VictimsList 
+        list={filteredVictims} 
+        searchFilter={searchFilter}
+      />
     </Layout>
   );
 };

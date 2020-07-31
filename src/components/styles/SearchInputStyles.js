@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import SearchInput from '../SearchInput';
+
+import mGlass from '../../images/m-glass.svg';
 
 const SearchInputStyles = styled.div`
   text-align: center;
@@ -11,7 +12,10 @@ const SearchInputStyles = styled.div`
     padding: .5em;
     outline: none;
     font-family: "Space Mono", monospace;
-
+    background-image: url(${mGlass});
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 95% center;
   }
 `;
 

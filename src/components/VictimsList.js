@@ -3,7 +3,8 @@ import { Link } from 'gatsby';
 
 import BrickList from '../components/styles/BrickList';
 
-const VictimsList = ({ list }) => (
+const VictimsList = ({ list, searchFilter }) => (
+  list.length ? (
   <BrickList>
     {list.map((killing) => (
       <li key={killing.node.ID}>
@@ -16,6 +17,11 @@ const VictimsList = ({ list }) => (
       </li>
     ))}
   </BrickList>
+  ) : (
+    <div>
+      {`Victim "${searchFilter}" is not on the list.`}
+    </div>
+  )
 );
 
 export default VictimsList;

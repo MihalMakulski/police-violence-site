@@ -117,9 +117,6 @@ a:hover {
 .container {
   max-width: 680px;
   min-height: 100vh;
-  padding: 4em 1em 280px 1em;
+  padding: 4em 1em 0 1em;
   margin: auto;
-  background-image: url("../../images/grass.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
 }
