@@ -1,7 +1,15 @@
 import React , { useState } from 'react';
 
+import SearchInputContainer from './styles/SearchInputStyles';
+
 const SearchInput = ({ onSearch }) => (
-  <input type="search" onChange={onSearch} />
+  <SearchInputContainer>
+    <input 
+      type="search"
+      placeholder="Search" 
+      onChange={onSearch} 
+    />
+  </SearchInputContainer>
 ); 
 
 export default SearchInput;

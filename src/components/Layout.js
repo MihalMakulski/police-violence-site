@@ -1,14 +1,16 @@
 import React from 'react';
 
+import Header from '../components/Header';
+
+import './styles/layout.css';
+
 const Layout = ({ children }) => (
-  <>
-    <header>
-      <h1>Police killings 2013 - 2020</h1>
-    </header>
+  <div className="container">
+    <Header />
     <div>
       <main>{children}</main>
     </div>
-  </>
+  </div>
 );
 
 export default Layout;

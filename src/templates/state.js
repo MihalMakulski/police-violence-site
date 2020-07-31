@@ -9,11 +9,17 @@ import VictimsList from '../components/VictimsList';
 const StatePageTemplate = ({ data }) => {
   const [ search, setSearch ] = useState('');
   const onSearch = (term) => {
-    if (!term || term.length < 3) setSearch('');
+    if (!term || term.length < 3) {
+      return setSearch('');
+    }
 
     setSearch(term);
   };
-  const filteredVictims = data.allKillingsJson.edges.filter((edge) => edge.node.Victim_s_name.toLowerCase().includes(search)); 
+  const filteredVictims = data.allKillingsJson.edges.filter(
+    (edge) => (
+      edge.node.Victim_s_name.toLowerCase().includes(search)
+    )
+  ); 
 
   return (
     <Layout>

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import BrickList from '../components/styles/BrickList';
+
 const VictimsList = ({ list }) => (
-  <ul>
+  <BrickList>
     {list.map((killing) => (
       <li key={killing.node.ID}>
         <Link 
@@ -13,7 +15,7 @@ const VictimsList = ({ list }) => (
         </Link>
       </li>
     ))}
-  </ul>
+  </BrickList>
 );
 
 export default VictimsList;

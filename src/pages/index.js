@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/Layout';
+import BrickList from '../components/styles/BrickList';
 
 import { getStateName } from '../utils/states';
 
@@ -12,13 +13,15 @@ export default function Home({ data }) {
   return (
     <Layout>
       <div>
-        {states.map((state, idx) => (
-          <li key={idx}>
-            <Link to={`/${state.toLowerCase()}`}>
-              {getStateName(state)}
-            </Link>
-          </li>
-        ))}
+        <BrickList>
+          {states.map((state, idx) => (
+            <li key={idx}>
+              <Link to={`/${state.toLowerCase()}`}>
+                {getStateName(state)}
+              </Link>
+            </li>
+          ))}
+        </BrickList>
       </div>
     </Layout>
   );

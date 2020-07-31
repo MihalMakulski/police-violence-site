@@ -2,24 +2,29 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing';
 
+import Layout from '../components/Layout';
+import KillingInfo from '../components/KillingInfo';
+
 const VictimPageTemplate = ({ data }) => {
   const { killingsJson: killing } = data;
 
   return <ModalRoutingContext.Consumer>
     {({ modal, closeTo }) => (
       <div>
-        <Link to={closeTo}>
-          Close
-        </Link>
-        <h2>{killing.Victim_s_name}</h2>
-        <p>{killing.Victim_s_gender}, {killing.Victim_s_race}</p>
-        <p>Date of the incident: {killing.Date_of_Incident__month_day_year_}</p>
-        <address>
-          {killing.City}, {killing.County}, {killing.State}<br/>
-          {killing.Street_Address_of_Incident}
-        </address>
-        <p>{killing.A_brief_description_of_the_circumstances_surrounding_the_death}</p>
-        <Link to="/">Go back to the homepage</Link>
+        {modal ? (
+          <>
+            <div style={{textAlign: "right"}}>
+              <Link to={closeTo}>
+                Close
+              </Link>
+            </div>
+            <KillingInfo killing={killing} />
+          </>
+        ) : (
+          <Layout>
+            <KillingInfo killing={killing} />
+          </Layout>
+        )}
       </div>
     )}
   </ModalRoutingContext.Consumer>

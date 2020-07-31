@@ -1,0 +1,125 @@
+/**
+ *  Reset CSS
+ *  https://dev.to/hankchizljaw/a-modern-css-reset-6p3
+ *
+ */
+
+ /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Space Mono", monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "BioRhyme", serif;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  max-width: 680px;
+  min-height: 100vh;
+  padding: 4em 1em 280px 1em;
+  margin: auto;
+  background-image: url("../../images/grass.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
