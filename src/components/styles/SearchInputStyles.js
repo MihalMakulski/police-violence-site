@@ -9,13 +9,13 @@ const SearchInputStyles = styled.div`
   input {
     border: none;
     border-bottom: 2px solid #000;
-    padding: .5em;
+    padding: .5em .5em .5em 2.3em;
     outline: none;
     font-family: "Space Mono", monospace;
     background-image: url(${mGlass});
     background-size: 20px;
     background-repeat: no-repeat;
-    background-position: 95% center;
+    background-position: 5px center;
   }
 `;
 
